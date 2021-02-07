@@ -30,10 +30,18 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    //Android Specific Test
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //testImplementation includes dependencies only for `test` source-set
+    //androidTestImplementation includes dependencies only for `androidTest` source-set
 
     //JUnit Test
     testImplementation 'junit:junit:4.13.1'
+    //Truth gives convenient methods which makes assertions in our test cases much more readable
+    testImplementation 'com.google.truth:truth:1.0.1'
+
+    //Android Specific Test
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0' //espresso is needed for UI Tests
+
+    //If truth dependency is also needed in `androidTest` source-set then we need to add below line
+    androidTestImplementation 'com.google.truth:truth:1.0.1'
 }
