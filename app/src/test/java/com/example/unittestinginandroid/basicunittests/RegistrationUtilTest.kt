@@ -68,6 +68,6 @@ class RegistrationUtilTest {
     @After
     fun tearDown() {
         //no need to do anything here as Garbage Collector will clean up resourceComparer automatically
-        //but in case if there is DatabaseConection object that that needs to be closed here
+        //but in case if there is DatabaseConnection object that that needs to be closed here
     }
 }

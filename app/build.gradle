@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
@@ -37,11 +36,36 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
     //Truth gives convenient methods which makes assertions in our test cases much more readable
     testImplementation 'com.google.truth:truth:1.0.1'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
 
     //Android Specific Test
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0' //espresso is needed for UI Tests
-
     //If truth dependency is also needed in `androidTest` source-set then we need to add below line
     androidTestImplementation 'com.google.truth:truth:1.0.1'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    //Below dependency is needed for runBlockingTest to test coroutines methods
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.1"
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:2.2.6"
+
+    //implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7'
+    //implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5'
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.3.0'
+
+    // Architectural Components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+
+    // Room
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
 }
