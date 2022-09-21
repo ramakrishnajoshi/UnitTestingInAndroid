@@ -62,7 +62,8 @@ class MainActivity : AppCompatActivity() {
     // suspend function can be called for either another suspend function
     // or from a coroutine context
     private suspend fun networkCall() {
-        delay(5000)
+        delay(5000) // delay is nothing but another suspend function that Delays coroutine
+        // for a given time without blocking a thread and resumes it after a specified time.
         logInfo("network call executed in thread : ${Thread.currentThread()}")
     }
 

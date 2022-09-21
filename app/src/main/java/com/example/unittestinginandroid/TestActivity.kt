@@ -3,10 +3,7 @@ package com.example.unittestinginandroid
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 class TestActivity : AppCompatActivity() {
 
@@ -22,6 +19,7 @@ class TestActivity : AppCompatActivity() {
                 Log.d(TAG, "response: $response")
             }
         }
+
 
         runBlocking {
             job.join()
